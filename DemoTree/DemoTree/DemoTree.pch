@@ -1,0 +1,19 @@
+//
+//  DemoTree.pch
+//  DemoTree
+//
+//  Created by 翟志杰 on 15/6/22.
+//  Copyright © 2015年 小悠美厨. All rights reserved.
+//
+
+#ifndef DemoTree_pch
+#define DemoTree_pch
+
+#import "ZZNaivgationController.h"
+
+#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* DemoTree_pch */
