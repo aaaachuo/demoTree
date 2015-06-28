@@ -15,6 +15,7 @@
 #import "ZZTabBarView.h"
 #import "ZZTabBarItem.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -27,13 +28,12 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:screen];
     self.window.backgroundColor = [UIColor redColor];
     UIViewController *controller = [self setupViewControllers];
     [self.window setRootViewController:controller];
     [self.window makeKeyAndVisible];
-    
-    
     
     return YES;
 }

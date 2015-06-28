@@ -66,8 +66,8 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
         _rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(UISCREENWIDTH*2, 0, UISCREENWIDTH, UISCREENHEIGHT)];
         [self addSubview:_rightImageView];
         
-        _moveTime = [NSTimer scheduledTimerWithTimeInterval:chageImageTime target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
-        _isTimeUp = NO;
+//        _moveTime = [NSTimer scheduledTimerWithTimeInterval:chageImageTime target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
+//        _isTimeUp = NO;
         
     }
     return self;
