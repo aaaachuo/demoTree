@@ -10,8 +10,9 @@
 #import "MainHeaderView.h"
 #import "MainCollectionCell.h"
 #import "MainDetailCell.h"
+#import "RestaurantController.h"
 
-@interface MainViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
+@interface MainViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MainHeaderViewDelegate> {
     
     UICollectionView *_collectionView;
 }
@@ -144,6 +145,7 @@
         UICollectionReusableView *view = nil;
         
         MainHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+        header.delegate = self;
         
         view = header;
         
@@ -153,6 +155,22 @@
     
     
     return nil;
+}
+
+- (void)headerView:(MainHeaderView *)headerView selectedItemTag:(NSInteger)tag {
+    
+    switch (tag) {
+        case 100:
+        {
+            RestaurantController *rsVc = [[RestaurantController alloc] init];
+            [self.navigationController pushViewController:rsVc animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
+
 }
 
 

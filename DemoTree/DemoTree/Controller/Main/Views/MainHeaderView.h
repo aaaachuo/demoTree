@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 @class AdScrollView;
+@class MainHeaderView;
+
+@protocol MainHeaderViewDelegate <NSObject>
+
+- (void)headerView:(MainHeaderView *)headerView selectedItemTag:(NSInteger)tag;
+
+@end
 
 @interface MainHeaderView : UICollectionReusableView
-
 /// 广告
 @property (nonatomic, strong) AdScrollView *adScrollView;
+@property (nonatomic, assign) id <MainHeaderViewDelegate> delegate;
 
 @end

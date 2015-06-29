@@ -62,6 +62,8 @@
         ordering.layer.borderWidth = 0.5f;
         ordering.layer.masksToBounds = YES;
         ordering.backgroundColor = [UIColor redColor];
+        ordering.tag = 100;
+        [ordering addTarget:self action:@selector(headerAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:ordering];
         
@@ -71,6 +73,8 @@
         reservation.layer.borderWidth = 0.5f;
         reservation.layer.masksToBounds = YES;
         reservation.backgroundColor = [UIColor redColor];
+        reservation.tag = 200;
+        [reservation addTarget:self action:@selector(headerAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:reservation];
         
@@ -80,6 +84,8 @@
         takeOut.layer.borderWidth = 0.5f;
         takeOut.layer.masksToBounds = YES;
         takeOut.backgroundColor = [UIColor redColor];
+        takeOut.tag = 300;
+        [takeOut addTarget:self action:@selector(headerAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:takeOut];
         
@@ -269,13 +275,17 @@
             make.centerY.equalTo(cellTitleView.mas_centerY);
         }];
         
-
-        
-        [self setNeedsLayout];
-        
     }
     
     return self;
+}
+
+- (void)headerAction:(UIButton *)sender {
+    
+    if ([_delegate respondsToSelector:@selector(headerView:selectedItemTag:)]) {
+        [_delegate headerView:self selectedItemTag:sender.tag];
+    }
+    
 }
 
 @end
