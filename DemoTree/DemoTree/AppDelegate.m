@@ -11,7 +11,6 @@
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
-#import "ZZTabBarViewController.h"
 #import "ZZTabBarView.h"
 #import "ZZTabBarItem.h"
 

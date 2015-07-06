@@ -13,6 +13,8 @@
 		A028D11E1B3ABB680021303F /* AdDataPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A028D11A1B3ABB680021303F /* AdDataPlist.plist */; };
 		A028D11F1B3ABB680021303F /* AdScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A028D11C1B3ABB680021303F /* AdScrollView.m */; };
 		A068B8AF1B3C4B3200E601FE /* TreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A068B8AE1B3C4B3200E601FE /* TreeManager.m */; };
+		A068BA091B45337000B1D56E /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A068BA071B45337000B1D56E /* MenuTableViewCell.m */; };
+		A068BA0A1B45337000B1D56E /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A068BA081B45337000B1D56E /* MenuTableViewCell.xib */; };
 		A07466471B35808D00ED60A2 /* ZZTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A07466421B35808D00ED60A2 /* ZZTabBarItem.m */; };
 		A07466481B35808D00ED60A2 /* ZZTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07466441B35808D00ED60A2 /* ZZTabBarView.m */; };
 		A07466491B35808D00ED60A2 /* ZZTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07466461B35808D00ED60A2 /* ZZTabBarViewController.m */; };
@@ -22,9 +24,14 @@
 		A0751D111B37C38B00F546BE /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751D101B37C38B00F546BE /* FourthViewController.m */; };
 		A0751D181B37C45800F546BE /* ZZNaivgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751D171B37C45800F546BE /* ZZNaivgationController.m */; };
 		A0751D1F1B3824B700F546BE /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0751D1E1B3824B700F546BE /* MainHeaderView.m */; };
+		A0931D011B48E44C0036D5A8 /* RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0931D001B48E44C0036D5A8 /* RecommendCell.m */; };
+		A0931D041B48E4560036D5A8 /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0931D031B48E4560036D5A8 /* RecommendHeaderView.m */; };
 		A0A1A9001B3FADD300E8834B /* MainDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A1A8FF1B3FADD300E8834B /* MainDetailCell.m */; };
 		A0A1A9041B3FC4A800E8834B /* RestaurantController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A1A9031B3FC4A800E8834B /* RestaurantController.m */; };
-		A0A1A9081B3FD54900E8834B /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A1A9071B3FD54900E8834B /* FilterView.m */; };
+		A0A37E6A1B423FD400D9BC17 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A37E691B423FD400D9BC17 /* FilterView.m */; };
+		A0A37E741B429DAD00D9BC17 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A37E721B429DAD00D9BC17 /* RestaurantCell.m */; };
+		A0A37E751B429DAD00D9BC17 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A37E731B429DAD00D9BC17 /* RestaurantCell.xib */; };
+		A0B622071B417CB200EB4798 /* CotegoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B622061B417CB200EB4798 /* CotegoryView.m */; };
 		A0DFCBCB1B2D7CEA00A1D91F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DFCBCA1B2D7CEA00A1D91F /* main.m */; };
 		A0DFCBCE1B2D7CEA00A1D91F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DFCBCD1B2D7CEA00A1D91F /* AppDelegate.m */; };
 		A0DFCBD11B2D7CEA00A1D91F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DFCBD01B2D7CEA00A1D91F /* ViewController.m */; };
@@ -32,6 +39,10 @@
 		A0DFCBD61B2D7CEA00A1D91F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DFCBD51B2D7CEA00A1D91F /* Images.xcassets */; };
 		A0DFCBD91B2D7CEA00A1D91F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DFCBD71B2D7CEA00A1D91F /* LaunchScreen.xib */; };
 		A0DFCBE51B2D7CEA00A1D91F /* DemoTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DFCBE41B2D7CEA00A1D91F /* DemoTreeTests.m */; };
+		A0E40A641B4382220036F44B /* TakeOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E40A621B4382220036F44B /* TakeOutCell.m */; };
+		A0E40A651B4382220036F44B /* TakeOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E40A631B4382220036F44B /* TakeOutCell.xib */; };
+		A0E41A5C1B48DE2900769BB2 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E41A5B1B48DE2900769BB2 /* HomePageViewController.m */; };
+		A0E9FEFC1B452A03000A57AB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEFB1B452A03000A57AB /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +66,9 @@
 		A028D11C1B3ABB680021303F /* AdScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdScrollView.m; sourceTree = "<group>"; };
 		A068B8AD1B3C4B3200E601FE /* TreeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeManager.h; sourceTree = "<group>"; };
 		A068B8AE1B3C4B3200E601FE /* TreeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeManager.m; sourceTree = "<group>"; };
+		A068BA061B45337000B1D56E /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		A068BA071B45337000B1D56E /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		A068BA081B45337000B1D56E /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		A07466411B35808D00ED60A2 /* ZZTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTabBarItem.h; sourceTree = "<group>"; };
 		A07466421B35808D00ED60A2 /* ZZTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTabBarItem.m; sourceTree = "<group>"; };
 		A07466431B35808D00ED60A2 /* ZZTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTabBarView.h; sourceTree = "<group>"; };
@@ -73,12 +87,21 @@
 		A0751D171B37C45800F546BE /* ZZNaivgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNaivgationController.m; sourceTree = "<group>"; };
 		A0751D1D1B3824B700F546BE /* MainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
 		A0751D1E1B3824B700F546BE /* MainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
+		A0931CFF1B48E44C0036D5A8 /* RecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendCell.h; sourceTree = "<group>"; };
+		A0931D001B48E44C0036D5A8 /* RecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendCell.m; sourceTree = "<group>"; };
+		A0931D021B48E4560036D5A8 /* RecommendHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
+		A0931D031B48E4560036D5A8 /* RecommendHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
 		A0A1A8FE1B3FADD300E8834B /* MainDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDetailCell.h; sourceTree = "<group>"; };
 		A0A1A8FF1B3FADD300E8834B /* MainDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailCell.m; sourceTree = "<group>"; };
 		A0A1A9021B3FC4A800E8834B /* RestaurantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantController.h; sourceTree = "<group>"; };
 		A0A1A9031B3FC4A800E8834B /* RestaurantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantController.m; sourceTree = "<group>"; };
-		A0A1A9061B3FD54900E8834B /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
-		A0A1A9071B3FD54900E8834B /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
+		A0A37E681B423FD400D9BC17 /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		A0A37E691B423FD400D9BC17 /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
+		A0A37E711B429DAD00D9BC17 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
+		A0A37E721B429DAD00D9BC17 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		A0A37E731B429DAD00D9BC17 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		A0B622051B417CB200EB4798 /* CotegoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CotegoryView.h; sourceTree = "<group>"; };
+		A0B622061B417CB200EB4798 /* CotegoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CotegoryView.m; sourceTree = "<group>"; };
 		A0DFCBC51B2D7CEA00A1D91F /* DemoTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DFCBC91B2D7CEA00A1D91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DFCBCA1B2D7CEA00A1D91F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +115,13 @@
 		A0DFCBDE1B2D7CEA00A1D91F /* DemoTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DFCBE31B2D7CEA00A1D91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DFCBE41B2D7CEA00A1D91F /* DemoTreeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTreeTests.m; sourceTree = "<group>"; };
+		A0E40A611B4382220036F44B /* TakeOutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutCell.h; sourceTree = "<group>"; };
+		A0E40A621B4382220036F44B /* TakeOutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutCell.m; sourceTree = "<group>"; };
+		A0E40A631B4382220036F44B /* TakeOutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutCell.xib; sourceTree = "<group>"; };
+		A0E41A5A1B48DE2900769BB2 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		A0E41A5B1B48DE2900769BB2 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		A0E9FEFA1B452A03000A57AB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		A0E9FEFB1B452A03000A57AB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A0EE8F3E1B37C240002CD123 /* DemoTree.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTree.pch; sourceTree = "<group>"; };
 		C2BB328F5E0FBFFE7C0F60F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB10E2DE2B27A0FDBFFCB399 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +164,16 @@
 				A028D11C1B3ABB680021303F /* AdScrollView.m */,
 			);
 			path = ADScrollView;
+			sourceTree = "<group>";
+		};
+		A069B2671B452CF800C84479 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A068BA061B45337000B1D56E /* MenuTableViewCell.h */,
+				A068BA071B45337000B1D56E /* MenuTableViewCell.m */,
+				A068BA081B45337000B1D56E /* MenuTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A07466401B35808D00ED60A2 /* CustTabBarController */ = {
@@ -211,6 +251,7 @@
 		A0A1A9011B3FC48500E8834B /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				A0E41A591B48DDE900769BB2 /* RestaurantHomePage */,
 				A0A1A9051B3FD4E400E8834B /* Views */,
 				A0A1A9021B3FC4A800E8834B /* RestaurantController.h */,
 				A0A1A9031B3FC4A800E8834B /* RestaurantController.m */,
@@ -221,8 +262,16 @@
 		A0A1A9051B3FD4E400E8834B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A0A1A9061B3FD54900E8834B /* FilterView.h */,
-				A0A1A9071B3FD54900E8834B /* FilterView.m */,
+				A0B622051B417CB200EB4798 /* CotegoryView.h */,
+				A0B622061B417CB200EB4798 /* CotegoryView.m */,
+				A0A37E681B423FD400D9BC17 /* FilterView.h */,
+				A0A37E691B423FD400D9BC17 /* FilterView.m */,
+				A0A37E711B429DAD00D9BC17 /* RestaurantCell.h */,
+				A0A37E721B429DAD00D9BC17 /* RestaurantCell.m */,
+				A0A37E731B429DAD00D9BC17 /* RestaurantCell.xib */,
+				A0E40A611B4382220036F44B /* TakeOutCell.h */,
+				A0E40A621B4382220036F44B /* TakeOutCell.m */,
+				A0E40A631B4382220036F44B /* TakeOutCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +362,7 @@
 		A0DFCBEF1B2D7F5300A1D91F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A0E9FEF91B4528E9000A57AB /* Menu */,
 				A0A1A9011B3FC48500E8834B /* Restaurant */,
 				A0751D081B37C32100F546BE /* Fourth */,
 				A0751D071B37C31A00F546BE /* Third */,
@@ -329,6 +379,37 @@
 				A068B8AE1B3C4B3200E601FE /* TreeManager.m */,
 			);
 			path = Commond;
+			sourceTree = "<group>";
+		};
+		A0E41A591B48DDE900769BB2 /* RestaurantHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				A0E41A5D1B48DE8500769BB2 /* Views */,
+				A0E41A5A1B48DE2900769BB2 /* HomePageViewController.h */,
+				A0E41A5B1B48DE2900769BB2 /* HomePageViewController.m */,
+			);
+			path = RestaurantHomePage;
+			sourceTree = "<group>";
+		};
+		A0E41A5D1B48DE8500769BB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0931CFF1B48E44C0036D5A8 /* RecommendCell.h */,
+				A0931D001B48E44C0036D5A8 /* RecommendCell.m */,
+				A0931D021B48E4560036D5A8 /* RecommendHeaderView.h */,
+				A0931D031B48E4560036D5A8 /* RecommendHeaderView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0E9FEF91B4528E9000A57AB /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A069B2671B452CF800C84479 /* View */,
+				A0E9FEFA1B452A03000A57AB /* MenuViewController.h */,
+				A0E9FEFB1B452A03000A57AB /* MenuViewController.m */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		E69EDE8E5DAD6EFCA9573036 /* Pods */ = {
@@ -423,9 +504,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DFCBD41B2D7CEA00A1D91F /* Main.storyboard in Resources */,
+				A068BA0A1B45337000B1D56E /* MenuTableViewCell.xib in Resources */,
 				A0DFCBD91B2D7CEA00A1D91F /* LaunchScreen.xib in Resources */,
 				A028D11E1B3ABB680021303F /* AdDataPlist.plist in Resources */,
+				A0A37E751B429DAD00D9BC17 /* RestaurantCell.xib in Resources */,
 				A0DFCBD61B2D7CEA00A1D91F /* Images.xcassets in Resources */,
+				A0E40A651B4382220036F44B /* TakeOutCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,25 +560,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B622071B417CB200EB4798 /* CotegoryView.m in Sources */,
 				A00549B21B3D9BC400B88A62 /* MainCollectionCell.m in Sources */,
+				A0E41A5C1B48DE2900769BB2 /* HomePageViewController.m in Sources */,
+				A0A37E741B429DAD00D9BC17 /* RestaurantCell.m in Sources */,
 				A0751D1F1B3824B700F546BE /* MainHeaderView.m in Sources */,
+				A0931D041B48E4560036D5A8 /* RecommendHeaderView.m in Sources */,
 				A07466491B35808D00ED60A2 /* ZZTabBarViewController.m in Sources */,
 				A028D11D1B3ABB680021303F /* AdDataModel.m in Sources */,
 				A07466471B35808D00ED60A2 /* ZZTabBarItem.m in Sources */,
 				A0DFCBD11B2D7CEA00A1D91F /* ViewController.m in Sources */,
 				A0DFCBCE1B2D7CEA00A1D91F /* AppDelegate.m in Sources */,
-				A0A1A9081B3FD54900E8834B /* FilterView.m in Sources */,
 				A0751D0B1B37C37700F546BE /* SecondViewController.m in Sources */,
 				A0A1A9001B3FADD300E8834B /* MainDetailCell.m in Sources */,
 				A0751D0E1B37C38000F546BE /* ThirdViewController.m in Sources */,
 				A0A1A9041B3FC4A800E8834B /* RestaurantController.m in Sources */,
+				A0A37E6A1B423FD400D9BC17 /* FilterView.m in Sources */,
 				A0751D181B37C45800F546BE /* ZZNaivgationController.m in Sources */,
+				A0E40A641B4382220036F44B /* TakeOutCell.m in Sources */,
 				A0751D111B37C38B00F546BE /* FourthViewController.m in Sources */,
 				A0751D041B37C30700F546BE /* MainViewController.m in Sources */,
 				A07466481B35808D00ED60A2 /* ZZTabBarView.m in Sources */,
 				A068B8AF1B3C4B3200E601FE /* TreeManager.m in Sources */,
 				A028D11F1B3ABB680021303F /* AdScrollView.m in Sources */,
 				A0DFCBCB1B2D7CEA00A1D91F /* main.m in Sources */,
+				A068BA091B45337000B1D56E /* MenuTableViewCell.m in Sources */,
+				A0931D011B48E44C0036D5A8 /* RecommendCell.m in Sources */,
+				A0E9FEFC1B452A03000A57AB /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

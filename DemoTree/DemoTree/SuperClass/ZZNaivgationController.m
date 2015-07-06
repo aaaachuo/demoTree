@@ -19,7 +19,7 @@
     if (self = [super initWithRootViewController:rootViewController]) {
         
         // 设置navigationBar的背景颜色，根据需要自己设置
-        UIColor * color = [UIColor colorWithRed:252/255.0 green:113/255.0 blue:114/255.0 alpha:1];
+        UIColor * color = PICK_COLOR;
         self.navigationBar.barTintColor = color;
         // 设置navigationBar是否透明，不透明的话会使可用界面原点下移（0，0）点为导航栏左下角下方的那个点
         self.navigationBar.translucent = NO;
