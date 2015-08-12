@@ -10,7 +10,8 @@
 #import "FilterView.h"
 #import "CotegoryView.h"
 #import "RestaurantCell.h"
-#import "MenuViewController.h"
+#import "HomePageViewController.h"
+#import "HomeViewController.h"
 
 @interface RestaurantController ()<UITableViewDelegate, UITableViewDataSource> {
 
@@ -40,10 +41,13 @@
     [self initCurrentTable];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [self.zz_tabBarController setTabBarHidden:YES animeted:YES];
+}
+
 - (void)initNavItem {
     
-    UIButton *button = [UIButton new];
-//    button setTitle:@"" forState:<#(UIControlState)#>
 }
 
 - (void)initFilterView {
@@ -75,8 +79,12 @@
         make.left.equalTo(self.view.mas_left).with.offset(0);
         make.right.equalTo(self.view.mas_right).with.offset(0);
         
-        make.height.equalTo(@(CGRectGetHeight(self.view.frame) - 40 - 50 - 64));
+        make.height.equalTo(@(CGRectGetHeight(self.view.frame) - 40 - 64));
     }];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 10)];
+    view.backgroundColor = kUIColorFromRGB(0xeeeee9);
+    _tableView.tableHeaderView = view;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -91,23 +99,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *identifier = @"reuse";
-    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:nil options:nil] lastObject];
-    }
+    RestaurantCell *cell = cell = [[[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:nil options:nil] lastObject];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MenuViewController *menuVc = [[MenuViewController alloc] init];
+    HomeViewController *homeVc = [[HomeViewController alloc] init];
     
-    [self.navigationController pushViewController:menuVc animated:YES];
+    [self.navigationController pushViewController:homeVc animated:YES];
 }
-
-
 
 @end

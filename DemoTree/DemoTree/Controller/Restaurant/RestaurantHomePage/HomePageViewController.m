@@ -12,6 +12,7 @@
 #import "MainDetailCell.h"
 #import "RecommendHeaderView.h"
 
+
 @interface HomePageViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     UICollectionView    *_collectionView;
 }
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.view.backgroundColor = kUIColorFromRGB(0xeeeee9);
     [self autoLayoutSubviews];
 }
 
@@ -51,6 +52,8 @@
     [_collectionView registerClass:[MainCollectionCell class] forCellWithReuseIdentifier:@"MainCollectionCell"];
     [_collectionView registerClass:[MainDetailCell class] forCellWithReuseIdentifier:@"MainDetailCell"];
     [_collectionView registerClass:[RecommendHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RecommendHeaderView"];
+    
+    self.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-113);
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

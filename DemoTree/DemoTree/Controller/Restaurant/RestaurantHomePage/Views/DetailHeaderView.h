@@ -10,4 +10,9 @@
 
 @interface DetailHeaderView : UIView
 
+/// 及时点餐
+@property (nonatomic, copy) void (^merchantOrder) (void);
+@property (nonatomic, copy) void (^merchantOrdering) (void);
+@property (nonatomic, copy) void (^merchantTakeaway) (void);
+
 @end

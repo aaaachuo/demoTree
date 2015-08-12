@@ -13,7 +13,9 @@
 #import <Masonry.h>
 #import "TreeManager.h"
 #import "ZZTabBarViewController.h"
-
+#import <AFNetworking/AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import "JSONKit.h"
 #define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
 
@@ -22,7 +24,15 @@
 
 #define TITLE_COLOR [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]
 #define PICK_COLOR [UIColor colorWithRed:252/255.0 green:113/255.0 blue:114/255.0 alpha:1]
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+//
+#define IDS_SERVER_COMMON                                    @"http://101.200.233.41:8100/meichu-api/meichu/api/common/"
+#define IDS_SERVER                                    @"http://101.200.233.41:8100/meichu-api/meichu/api/"
+
+#define IDS_TEST_SERVER                                 @"http://10.10.10.16:8080/meichu/api/common/getResList"
+
+#define REQUEST_URL(detail) [IDS_SERVER stringByAppendingString:(detail)];
+#define IDS_MAIN_BANNER     [IDS_SERVER stringByAppendingString:@"homepage/getBanner"];
 
 #endif /* DemoTree_pch */

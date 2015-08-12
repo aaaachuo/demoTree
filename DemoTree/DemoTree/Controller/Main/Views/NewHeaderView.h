@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class AdScrollView;
+@class NewHeaderView;
+
+@protocol HeaderViewDelegate <NSObject>
+
+- (void)headerView:(NewHeaderView *)headerView selectedItemTag:(NSInteger)tag;
+
+@end
+
 @interface NewHeaderView : UIView
+
+@property (nonatomic, strong) AdScrollView *adScrollView;
+@property (nonatomic, assign) id <HeaderViewDelegate> delegate;
 
 @end

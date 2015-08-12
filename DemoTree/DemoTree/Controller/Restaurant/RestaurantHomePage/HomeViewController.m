@@ -7,31 +7,107 @@
 //
 
 #import "HomeViewController.h"
+#import "TabButton.h"
+#import "HomePageViewController.h"
+#import "HomeDetailViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+    
+    TabButton *_leftBtn;
+    TabButton *_rightBtn;
+    NSInteger _index;
+    HomeDetailViewController *_detailVc;
+    HomePageViewController *_pageVc;
+}
 
 @end
 
 @implementation HomeViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        self.title = @"餐厅详情";
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    _detailVc = [[HomeDetailViewController alloc] init];
+    _pageVc = [[HomePageViewController alloc] init];
+    [self addChildViewController:_detailVc];
+    [self addChildViewController:_pageVc];
+    [self.view addSubview:_pageVc.view];
+    
+    [self createTabView];
+    _index = 0;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)createTabView {
+    
+    UIView *tabView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 54 - 64, SCREEN_WIDTH, 54)];
+    
+    TabButton *btnLeft = [TabButton new];
+    btnLeft.selected = YES;
+    btnLeft.frame = CGRectMake(0, 0, SCREEN_WIDTH/2, CGRectGetHeight(tabView.frame));
+    [tabView addSubview:btnLeft];
+    [btnLeft setImage:[UIImage imageNamed:@"merchant_home"] forState:UIControlStateNormal];
+    [btnLeft setImage:[UIImage imageNamed:@"merchant_home_sel"] forState:UIControlStateSelected];
+    [btnLeft setTitle:@"餐厅首页" forState:UIControlStateNormal];
+    [btnLeft setTitleColor:PICK_COLOR forState:UIControlStateSelected];
+    [btnLeft setTitleColor:TITLE_COLOR forState:UIControlStateNormal];
+    [btnLeft addTarget:self action:@selector(tabAction:) forControlEvents:UIControlEventTouchUpInside];
+    btnLeft.tag = 100;
+    _leftBtn = btnLeft;
+    
+    TabButton *btnRight = [TabButton new];
+    btnRight.frame = CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, CGRectGetHeight(tabView.frame));
+    
+    [tabView addSubview:btnRight];
+    [btnRight setImage:[UIImage imageNamed:@"merchant_details"] forState:UIControlStateNormal];
+    [btnRight setImage:[UIImage imageNamed:@"merchant_details_sel"] forState:UIControlStateSelected];
+    [btnRight setTitle:@"餐厅详情" forState:UIControlStateNormal];
+    [btnRight setTitleColor:PICK_COLOR forState:UIControlStateSelected];
+    [btnRight setTitleColor:TITLE_COLOR forState:UIControlStateNormal];
+    [btnRight addTarget:self action:@selector(tabAction:) forControlEvents:UIControlEventTouchUpInside];
+    btnRight.tag = 200;
+    _rightBtn = btnRight;
+    
+    [self.view addSubview:tabView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tabAction:(UIButton *)sender {
+    
+    if (_index == sender.tag) {
+        return;
+    }
+    
+    _index = sender.tag;
+    _leftBtn.selected = !_leftBtn.selected;
+    _rightBtn.selected = !_rightBtn.selected;
+    
+    UIViewController *curVc;
+    UIViewController *transVc;
+    
+    if (_rightBtn.selected) {
+        curVc = _pageVc;
+        transVc = _detailVc;
+    }else {
+        curVc = _detailVc;
+        transVc = _pageVc;
+    }
+    
+    [self transitionFromViewController:curVc
+                      toViewController:transVc
+                              duration:0
+                               options:UIViewAnimationOptionLayoutSubviews
+                            animations:nil
+                            completion:nil];
 }
-*/
 
 @end

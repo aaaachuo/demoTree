@@ -50,17 +50,28 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-B3-pkV">
-                        <rect key="frame" x="9" y="98" width="1" height="12"/>
+                        <rect key="frame" x="9" y="98" width="2" height="12"/>
                         <color key="backgroundColor" red="0.9882352941176471" green="0.44313725490196076" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="Tky-cU-cff"/>
+                            <constraint firstAttribute="width" constant="2" id="ZFk-6m-FBN"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月销量：1200份" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enq-Cz-JQz">
                         <rect key="frame" x="16" y="93" width="129" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="129" id="dwi-zc-83C"/>
+                            <constraint firstAttribute="height" constant="21" id="pB3-pq-uZe"/>
+                            <constraint firstAttribute="width" constant="129" id="ylT-ZW-moO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dwi-zc-83C"/>
+                            </mask>
+                        </variation>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvv-pV-JAm">
                         <rect key="frame" x="210" y="87" width="102" height="34"/>
@@ -126,16 +137,22 @@
                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khs-ck-iY6">
+                        <rect key="frame" x="10" y="129" width="300" height="1"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Enq-Cz-JQz" secondAttribute="bottom" constant="7.5" id="2S5-RO-eRA"/>
                     <constraint firstItem="jqK-ES-rif" firstAttribute="baseline" secondItem="YAM-VC-hr5" secondAttribute="baseline" id="3jg-49-CjQ"/>
                     <constraint firstItem="qhk-24-qlW" firstAttribute="centerY" secondItem="PQe-xt-AUF" secondAttribute="centerY" id="5qu-wA-DIT"/>
                     <constraint firstItem="PQe-xt-AUF" firstAttribute="top" secondItem="U9p-DN-Kb3" secondAttribute="bottom" constant="5" id="B1g-NR-v7e"/>
+                    <constraint firstItem="yfm-B3-pkV" firstAttribute="top" secondItem="qhk-24-qlW" secondAttribute="bottom" constant="19" id="BIM-N4-Nnl"/>
                     <constraint firstItem="Enq-Cz-JQz" firstAttribute="leading" secondItem="yfm-B3-pkV" secondAttribute="trailing" constant="6" id="FsI-iL-LcB"/>
                     <constraint firstItem="jqK-ES-rif" firstAttribute="leading" secondItem="qhk-24-qlW" secondAttribute="trailing" constant="8" symbolic="YES" id="GeL-KY-foc"/>
                     <constraint firstItem="YAM-VC-hr5" firstAttribute="top" secondItem="U9p-DN-Kb3" secondAttribute="bottom" constant="28" id="JL7-r3-Tnm"/>
                     <constraint firstItem="fvv-pV-JAm" firstAttribute="top" secondItem="YAM-VC-hr5" secondAttribute="bottom" constant="8" symbolic="YES" id="KxS-SE-ITQ"/>
+                    <constraint firstItem="qhk-24-qlW" firstAttribute="leading" secondItem="yfm-B3-pkV" secondAttribute="leading" constant="-1" id="Lfl-rY-t0g"/>
                     <constraint firstItem="U9p-DN-Kb3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="MLh-cc-SkU"/>
                     <constraint firstAttribute="trailing" secondItem="yfm-B3-pkV" secondAttribute="trailing" constant="310" id="MyY-f2-plr"/>
                     <constraint firstItem="PQe-xt-AUF" firstAttribute="leading" secondItem="D07-9X-yKb" secondAttribute="trailing" constant="8" symbolic="YES" id="NZC-X0-ZJp"/>
@@ -153,14 +170,23 @@
                     <constraint firstAttribute="bottomMargin" secondItem="fvv-pV-JAm" secondAttribute="bottom" constant="0.5" id="fIb-ey-jUG"/>
                     <constraint firstItem="yfm-B3-pkV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="hHD-8X-cRV"/>
                     <constraint firstItem="U9p-DN-Kb3" firstAttribute="leading" secondItem="qhk-24-qlW" secondAttribute="trailing" constant="2" id="hf5-FW-gPU"/>
+                    <constraint firstItem="Enq-Cz-JQz" firstAttribute="top" secondItem="qhk-24-qlW" secondAttribute="bottom" constant="14" id="ozC-BH-qJH"/>
                     <constraint firstItem="yfm-B3-pkV" firstAttribute="leading" secondItem="qhk-24-qlW" secondAttribute="leading" id="psw-MY-wOy"/>
+                    <constraint firstItem="Enq-Cz-JQz" firstAttribute="leading" secondItem="yfm-B3-pkV" secondAttribute="trailing" constant="5" id="qao-bO-2eH"/>
                     <constraint firstItem="qhk-24-qlW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="qdC-Rs-jLt"/>
                     <constraint firstItem="jqK-ES-rif" firstAttribute="bottom" secondItem="qhk-24-qlW" secondAttribute="bottom" id="wbv-9p-1fA"/>
                     <constraint firstItem="U9p-DN-Kb3" firstAttribute="trailing" secondItem="fvv-pV-JAm" secondAttribute="trailing" constant="-1" id="zsM-ID-gBf"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="2S5-RO-eRA"/>
+                        <exclude reference="FsI-iL-LcB"/>
+                        <exclude reference="W3v-WO-T3F"/>
+                        <exclude reference="MyY-f2-plr"/>
                         <exclude reference="PLp-kW-aKf"/>
+                        <exclude reference="TI4-1U-271"/>
+                        <exclude reference="UdJ-5f-fV3"/>
+                        <exclude reference="hHD-8X-cRV"/>
                         <exclude reference="psw-MY-wOy"/>
                     </mask>
                 </variation>

@@ -10,12 +10,28 @@
 
 @implementation TabButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        self.titleLabel.font = [UIFont systemFontOfSize:12];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    return self;
 }
-*/
+
+- (CGRect)imageRectForContentRect:(CGRect)contentRect {
+    
+    return CGRectMake(roundf(contentRect.size.width/2 - 8),
+                      15, 16, 15);
+}
+
+- (CGRect)titleRectForContentRect:(CGRect)contentRect {
+    
+    return CGRectMake(roundf(contentRect.size.width/2 - 40), 30,
+                      80, 20);
+}
 
 @end

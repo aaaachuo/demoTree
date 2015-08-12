@@ -149,7 +149,7 @@
     _cotegory2.backgroundColor = [UIColor whiteColor];
     _cotegory3.backgroundColor = [UIColor whiteColor];
     _cotegory4.backgroundColor = [UIColor whiteColor];
-    _cotegory1.selected = self;
+    _cotegory1.selected = YES;
     
     [_cotegory1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_cotegoryView.mas_top).with.offset(15);

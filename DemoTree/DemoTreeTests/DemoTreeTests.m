@@ -10,7 +10,8 @@
 #import <XCTest/XCTest.h>
 
 @interface DemoTreeTests : XCTestCase
-
+{
+}
 @end
 
 @implementation DemoTreeTests
@@ -28,6 +29,8 @@
 - (void)testExample {
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
+    
+    
 }
 
 - (void)testPerformanceExample {

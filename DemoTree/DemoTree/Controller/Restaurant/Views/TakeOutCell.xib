@@ -35,32 +35,32 @@
                                     <constraint firstAttribute="width" constant="60" id="Nt8-E7-7bn"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" translatesAutoresizingMaskIntoConstraints="NO" id="bYz-z7-iLL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" highlightedImage="evalSelect" translatesAutoresizingMaskIntoConstraints="NO" id="bYz-z7-iLL">
                                 <rect key="frame" x="94" y="43" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="Uyb-jE-SyE"/>
                                     <constraint firstAttribute="width" constant="13" id="mFQ-Sk-srU"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" translatesAutoresizingMaskIntoConstraints="NO" id="jBZ-d8-IOa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" highlightedImage="evalSelect" translatesAutoresizingMaskIntoConstraints="NO" id="jBZ-d8-IOa">
                                 <rect key="frame" x="109" y="43" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="gS8-jb-TZX"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Hz-ZEi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" highlightedImage="evalSelect" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Hz-ZEi">
                                 <rect key="frame" x="125" y="43" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="A2c-ua-KKE"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-UO-ct2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" highlightedImage="evalSelect" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-UO-ct2">
                                 <rect key="frame" x="141" y="43" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="5hG-9u-NK7"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" translatesAutoresizingMaskIntoConstraints="NO" id="Vn9-zK-Pab">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalUncheck" highlightedImage="evalSelect" translatesAutoresizingMaskIntoConstraints="NO" id="Vn9-zK-Pab">
                                 <rect key="frame" x="156" y="43" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="hJu-zU-3Sl"/>
@@ -229,6 +229,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="evalSelect" width="25" height="25"/>
         <image name="evalUncheck" width="25" height="25"/>
         <image name="head" width="24" height="24"/>
         <image name="locate" width="25" height="20"/>

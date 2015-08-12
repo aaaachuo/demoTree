@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, AdTitleShowStyle)
 @property (assign,nonatomic,readwrite) UIPageControlShowStyle  PageControlShowStyle;
 @property (assign,nonatomic,readonly) AdTitleShowStyle  adTitleStyle;
 
-- (void)setAdTitleArray:(NSArray *)adTitleArray withShowStyle:(AdTitleShowStyle)adTitleStyle;
+//- (void)setAdTitleArray:(NSArray *)adTitleArray withShowStyle:(AdTitleShowStyle)adTitleStyle;
 @end
 
 // 版权属于原作者

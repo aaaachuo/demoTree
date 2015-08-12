@@ -29,10 +29,8 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     NSTimer * _moveTime;
     //用于确定滚动式由人导致的还是计时器到了,系统帮我们滚动的,YES,则为系统滚动,NO则为客户滚动(ps.在客户端中客户滚动一个广告后,这个广告的计时器要归0并重新计时)
     BOOL _isTimeUp;
-    //为每一个图片添加一个广告语(可选)
-    UILabel * _leftAdLabel;
-    UILabel * _centerAdLabel;
-    UILabel * _rightAdLabel;
+    
+    UILabel *_titleLabel;
 }
 
 @property (retain,nonatomic,readonly) UIImageView * leftImageView;
@@ -53,19 +51,27 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.pagingEnabled = YES;
-        self.contentOffset = CGPointMake(UISCREENWIDTH, 0);
-        self.contentSize = CGSizeMake(UISCREENWIDTH * 3, UISCREENHEIGHT);
+        self.contentOffset = CGPointMake(SCREEN_WIDTH, 0);
+        self.contentSize = CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT);
         self.delegate = self;
         
-        
-        
-        _leftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, UISCREENWIDTH, UISCREENHEIGHT)];
+        _leftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [self addSubview:_leftImageView];
-        _centerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(UISCREENWIDTH, 0, UISCREENWIDTH, UISCREENHEIGHT)];
+        _centerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [self addSubview:_centerImageView];
-        _rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(UISCREENWIDTH*2, 0, UISCREENWIDTH, UISCREENHEIGHT)];
+        _rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [self addSubview:_rightImageView];
         
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+        [self addSubview:_titleLabel];
+        
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.mas_left).with.offset(0);
+            make.right.equalTo(self.mas_right).with.offset(0);
+            make.bottom.equalTo(self.mas_bottom).with.offset(0);
+            make.height.equalTo(@(adjustsSizeToFitWithWidth320(32)));
+        }];
 //        _moveTime = [NSTimer scheduledTimerWithTimeInterval:chageImageTime target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
 //        _isTimeUp = NO;
         
@@ -84,6 +90,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
 }
 
 #pragma mark - 设置每个对应广告对应的广告语
+/*
 - (void)setAdTitleArray:(NSArray *)adTitleArray withShowStyle:(AdTitleShowStyle)adTitleStyle
 {
     _adTitleArray = adTitleArray;
@@ -99,11 +106,11 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     _rightAdLabel = [[UILabel alloc]init];
     
     
-    _leftAdLabel.frame = CGRectMake(10, UISCREENHEIGHT - 40, UISCREENWIDTH, 20);
+    _leftAdLabel.frame = CGRectMake(10, SCREEN_HEIGHT - 40, SCREEN_WIDTH, 20);
     [_leftImageView addSubview:_leftAdLabel];
-    _centerAdLabel.frame = CGRectMake(10, UISCREENHEIGHT - 40, UISCREENWIDTH, 20);
+    _centerAdLabel.frame = CGRectMake(10, SCREEN_HEIGHT - 40, SCREEN_WIDTH, 20);
     [_centerImageView addSubview:_centerAdLabel];
-    _rightAdLabel.frame = CGRectMake(10, UISCREENHEIGHT - 40, UISCREENWIDTH, 20);
+    _rightAdLabel.frame = CGRectMake(10, SCREEN_HEIGHT - 40, SCREEN_WIDTH, 20);
     [_rightImageView addSubview:_rightAdLabel];
     
     if (adTitleStyle == AdTitleShowStyleLeft) {
@@ -130,7 +137,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     _rightAdLabel.text = _adTitleArray[2];
     
 }
-
+*/
 
 #pragma mark - 创建pageControl,指定其显示样式
 - (void)setPageControlShowStyle:(UIPageControlShowStyle)PageControlShowStyle
@@ -143,16 +150,16 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     
     if (PageControlShowStyle == UIPageControlShowStyleLeft)
     {
-        _pageControl.frame = CGRectMake(10, HIGHT+UISCREENHEIGHT - 20, 20*_pageControl.numberOfPages, 20);
+        _pageControl.frame = CGRectMake(10, HIGHT+SCREEN_HEIGHT - 20, 20*_pageControl.numberOfPages, 20);
     }
     else if (PageControlShowStyle == UIPageControlShowStyleCenter)
     {
         _pageControl.frame = CGRectMake(0, 0, 20*_pageControl.numberOfPages, 20);
-        _pageControl.center = CGPointMake(UISCREENWIDTH/2.0, HIGHT+UISCREENHEIGHT - 10);
+        _pageControl.center = CGPointMake(SCREEN_WIDTH/2.0, HIGHT + SCREEN_HEIGHT - 10);
     }
     else
     {
-        _pageControl.frame = CGRectMake( UISCREENWIDTH - 20*_pageControl.numberOfPages, HIGHT+UISCREENHEIGHT - 20, 20*_pageControl.numberOfPages, 20);
+        _pageControl.frame = CGRectMake( SCREEN_WIDTH - 20 * _pageControl.numberOfPages, HIGHT+SCREEN_HEIGHT - 20, 20*_pageControl.numberOfPages, 20);
     }
     _pageControl.currentPage = 0;
     
@@ -170,7 +177,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
 - (void)animalMoveImage
 {
     
-    [self setContentOffset:CGPointMake(UISCREENWIDTH * 2, 0) animated:YES];
+    [self setContentOffset:CGPointMake(SCREEN_WIDTH * 2, 0) animated:YES];
     _isTimeUp = YES;
     [NSTimer scheduledTimerWithTimeInterval:0.4f target:self selector:@selector(scrollViewDidEndDecelerating:) userInfo:nil repeats:NO];
 }
@@ -183,7 +190,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
         currentImage = (currentImage-1)%_imageNameArray.count;
         _pageControl.currentPage = (_pageControl.currentPage - 1)%_imageNameArray.count;
     }
-    else if(self.contentOffset.x == UISCREENWIDTH * 2)
+    else if(self.contentOffset.x == SCREEN_WIDTH * 2)
     {
         
        currentImage = (currentImage+1)%_imageNameArray.count;
@@ -196,17 +203,17 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     
     _leftImageView.image = [UIImage imageNamed:_imageNameArray[(currentImage-1)%_imageNameArray.count]];
     
-    _leftAdLabel.text = _adTitleArray[(currentImage-1)%_imageNameArray.count];
+//    _leftAdLabel.text = _adTitleArray[(currentImage-1)%_imageNameArray.count];
     
     _centerImageView.image = [UIImage imageNamed:_imageNameArray[currentImage%_imageNameArray.count]];
     
-    _centerAdLabel.text = _adTitleArray[currentImage%_imageNameArray.count];
+//    _centerAdLabel.text = _adTitleArray[currentImage%_imageNameArray.count];
     
     _rightImageView.image = [UIImage imageNamed:_imageNameArray[(currentImage+1)%_imageNameArray.count]];
     
-    _rightAdLabel.text = _adTitleArray[(currentImage+1)%_imageNameArray.count];
+//    _rightAdLabel.text = _adTitleArray[(currentImage+1)%_imageNameArray.count];
     
-    self.contentOffset = CGPointMake(UISCREENWIDTH, 0);
+    self.contentOffset = CGPointMake(SCREEN_WIDTH, 0);
     
     //手动控制图片滚动应该取消那个三秒的计时器
     if (!_isTimeUp) {

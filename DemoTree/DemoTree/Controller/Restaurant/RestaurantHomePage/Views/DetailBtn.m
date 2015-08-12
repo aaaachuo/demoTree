@@ -10,12 +10,29 @@
 
 @implementation DetailBtn
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        self.titleLabel.font = [UIFont systemFontOfSize:12];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
+    return self;
 }
-*/
+
+- (CGRect)imageRectForContentRect:(CGRect)contentRect {
+    
+    return CGRectMake(roundf(contentRect.size.width/2 - 8),
+                      9, 16, 15);
+}
+
+- (CGRect)titleRectForContentRect:(CGRect)contentRect {
+    
+    return CGRectMake(roundf(contentRect.size.width/2 - 40), 24,
+                      80, 20);
+}
 
 @end

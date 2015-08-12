@@ -46,4 +46,20 @@ FOUNDATION_EXPORT NSString *getDeviceScreen() {
     return nil;
 }
 
+FOUNDATION_EXPORT NSDictionary *getCommonHeaderInfo() {
+    
+    NSDictionary *clientInfo = @{@"editionld":@"1.0.0", @"softLanguage":@"1", @"platformld":@"100"};
+    NSDictionary *properties = @{@"password":@"", @"username":@"", @"uuid":@"1", @"stauts":@"0"};
+    
+    NSDictionary *dic = @{@"clientInfo":clientInfo, @"properties":properties};
+    return dic;
+};
+
+
+FOUNDATION_EXPORT CGFloat adjustsSizeToFitWithWidth320(CGFloat size) {
+    
+    CGFloat width = SCREEN_WIDTH;
+    return size * width/320;
+}
+
 @end

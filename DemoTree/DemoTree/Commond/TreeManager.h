@@ -13,5 +13,8 @@
 + (TreeManager *)shareDemoTreeManager;
 
 FOUNDATION_EXPORT NSString *getDeviceScreen();
+FOUNDATION_EXPORT NSDictionary *getCommonHeaderInfo();
+
+FOUNDATION_EXPORT CGFloat adjustsSizeToFitWithWidth320(CGFloat size);
 
 @end
