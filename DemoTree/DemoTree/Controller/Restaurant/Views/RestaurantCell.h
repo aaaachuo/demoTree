@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class DefaultReplyMerchantList;
+
 @interface RestaurantCell : UITableViewCell
+
+/// 赋值
+@property (nonatomic, strong)  DefaultReplyMerchantList *cellData;
 
 @end

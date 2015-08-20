@@ -9,6 +9,7 @@
 #import "HomeDetailViewController.h"
 #import "DetailHeaderView.h"
 #import "DetailTableViewCell.h"
+#import "OrderingViewController.h"
 
 @interface HomeDetailViewController ()<UITableViewDelegate, UITableViewDataSource> {
     
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-113);
-    
+    self.view.backgroundColor = BACKGRAY_COLOR;
     [self createTableView];
 }
 
@@ -43,9 +44,11 @@
     
     _tableView = tableview;
     
+    typeof(self) weakSelf = self;
     DetailHeaderView *header = [[DetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 188)];
     header.merchantOrder = ^{
-        
+        OrderingViewController *orderVc = [[OrderingViewController alloc] init];
+        [weakSelf.navigationController pushViewController:orderVc animated:YES];
     };
     
     header.merchantOrdering = ^{

@@ -35,6 +35,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStylePlain target:self action:@selector(exitView)];
+    self.navigationItem.leftBarButtonItem = item;
+}
+
+- (void)exitView {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -48,6 +55,8 @@
     
     [self.navigationController pushViewController:enrollVc animated:YES];
 }
+
+
 
 /*
 #pragma mark - Navigation

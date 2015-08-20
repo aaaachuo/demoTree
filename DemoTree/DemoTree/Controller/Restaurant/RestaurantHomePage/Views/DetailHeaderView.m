@@ -172,7 +172,7 @@
         [btn1 addTarget:self action:@selector(btn1Action:) forControlEvents:UIControlEventTouchUpInside];
         [btn1 setImage:[UIImage imageNamed:@"merchant_order"] forState:UIControlStateNormal];
         btn1.tag = 100;
-        [btn1 setTitle:@"及时点餐" forState:UIControlStateNormal];
+        [btn1 setTitle:@"点餐" forState:UIControlStateNormal];
         [currentView addSubview:btn1];
         
         [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -186,7 +186,7 @@
         [btn2 addTarget:self action:@selector(btn1Action:) forControlEvents:UIControlEventTouchUpInside];
         [btn2 setImage:[UIImage imageNamed:@"merchant_ordering"] forState:UIControlStateNormal];
         btn2.tag = 200;
-        [btn2 setTitle:@"商业预订" forState:UIControlStateNormal];
+        [btn2 setTitle:@"预订" forState:UIControlStateNormal];
         [currentView addSubview:btn2];
         
         [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {

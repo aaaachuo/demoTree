@@ -19,27 +19,13 @@
         
         self.backgroundColor = kUIColorFromRGB(0xeeeee9);
         
-        [TreeManager shareDemoTreeManager];
+        CGFloat adHeight = adjustsSizeToFitWithWidth320(160);
+        CGFloat buttonWidth = adjustsSizeToFitWithWidth320(88);
+        CGFloat touchViewHeight = adjustsSizeToFitWithWidth320(54);
+        CGFloat cellTitleViewHeight = adjustsSizeToFitWithWidth320(34);
         
-        NSString *deviceScreen = getDeviceScreen();
-        
-        CGFloat adHeight = 0;
-        CGFloat buttonWidth = 0;
-        CGFloat touchViewHeight = 0;
-        CGFloat cellTitleViewHeight = 0;
-        if ([deviceScreen isEqualToString:@"4.7"]) {
-            
-        }else if ([deviceScreen isEqualToString:@"5.5"]) {
-            
-        }else {
-            adHeight = 160;
-            buttonWidth = 88;
-            touchViewHeight = 54;
-            cellTitleViewHeight = 34;
-        }
-        
-        AdScrollView *adscrollView = [[AdScrollView alloc] init];
-        adscrollView.backgroundColor = [UIColor redColor];
+        AdScrollView *adscrollView = [[AdScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, adHeight)];
+//        adscrollView.backgroundColor = [UIColor redColor];
         adscrollView.PageControlShowStyle = UIPageControlShowStyleRight;
         adscrollView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
         adscrollView.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
@@ -47,43 +33,46 @@
         _adScrollView = adscrollView;
         [self addSubview:_adScrollView];
         
-        [_adScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.top.equalTo(self.mas_top).with.offset(0);
-            make.left.equalTo(self.mas_left).with.offset(0);
-            make.right.equalTo(self.mas_left).with.offset(0);
-            
-            make.height.equalTo(@(adHeight));
-        }];
+//        [_adScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            
+//            make.top.equalTo(self.mas_top).with.offset(0);
+//            make.left.equalTo(self.mas_left).with.offset(0);
+//            make.right.equalTo(self.mas_left).with.offset(0);
+//            
+//            make.height.equalTo(@(adHeight));
+//        }];
         
         UIButton *ordering = [[UIButton alloc] init];
-        ordering.layer.cornerRadius = buttonWidth/2;
-        ordering.layer.borderColor = kUIColorFromRGB(0xdfd9d1).CGColor;
-        ordering.layer.borderWidth = 0.5f;
-        ordering.layer.masksToBounds = YES;
-        ordering.backgroundColor = [UIColor redColor];
+//        ordering.layer.cornerRadius = buttonWidth/2;
+//        ordering.layer.borderColor = kUIColorFromRGB(0xdfd9d1).CGColor;
+//        ordering.layer.borderWidth = 0.5f;
+//        ordering.layer.masksToBounds = YES;
+//        ordering.backgroundColor = [UIColor redColor];
+        [ordering setImage:[UIImage imageNamed:@"main_one"] forState:UIControlStateNormal];
         ordering.tag = 100;
         [ordering addTarget:self action:@selector(headerAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:ordering];
         
         UIButton *reservation = [[UIButton alloc] init];
-        reservation.layer.cornerRadius = buttonWidth/2;
-        reservation.layer.borderColor = kUIColorFromRGB(0xdfd9d1).CGColor;
-        reservation.layer.borderWidth = 0.5f;
-        reservation.layer.masksToBounds = YES;
-        reservation.backgroundColor = [UIColor redColor];
+//        reservation.layer.cornerRadius = buttonWidth/2;
+//        reservation.layer.borderColor = kUIColorFromRGB(0xdfd9d1).CGColor;
+//        reservation.layer.borderWidth = 0.5f;
+//        reservation.layer.masksToBounds = YES;
+//        reservation.backgroundColor = [UIColor redColor];
+        [reservation setImage:[UIImage imageNamed:@"main_two"] forState:UIControlStateNormal];
         reservation.tag = 200;
         [reservation addTarget:self action:@selector(headerAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:reservation];
         
         UIButton *takeOut = [[UIButton alloc] init];
-        takeOut.layer.cornerRadius = buttonWidth/2;
-        takeOut.layer.borderColor = kUIColorFromRGB(0xdfd9d1).CGColor;
-        takeOut.layer.borderWidth = 0.5f;
-        takeOut.layer.masksToBounds = YES;
-        takeOut.backgroundColor = [UIColor redColor];
+//        takeOut.layer.cornerRadius = buttonWidth/2;
+//        takeOut.layer.borderColor = kUIColorFromRGB(0xdfd9d1).CGColor;
+//        takeOut.layer.borderWidth = 0.5f;
+//        takeOut.layer.masksToBounds = YES;
+//        takeOut.backgroundColor = [UIColor redColor];
+        [takeOut setImage:[UIImage imageNamed:@"main_three"] forState:UIControlStateNormal];
         takeOut.tag = 300;
         [takeOut addTarget:self action:@selector(headerAction:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -112,7 +101,7 @@
         }];
         
         UILabel *orderingTitle = [[UILabel alloc] init];
-        orderingTitle.text = @"及时点餐";
+        orderingTitle.text = @"点餐";
         orderingTitle.font = [UIFont systemFontOfSize:13];
         orderingTitle.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1];
         orderingTitle.textAlignment = NSTextAlignmentCenter;
@@ -140,7 +129,7 @@
             make.centerX.equalTo(ordering.mas_centerX);
             
             make.width.equalTo(ordering.mas_width);
-            make.height.equalTo(@(13));
+            make.height.equalTo(@(adjustsSizeToFitWithWidth320(15)));
         }];
         
         [reservationTitle mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -274,7 +263,6 @@
             make.left.equalTo(cellTitleView.mas_left).with.offset(15);
             make.centerY.equalTo(cellTitleView.mas_centerY);
         }];
-        
     }
     
     return self;

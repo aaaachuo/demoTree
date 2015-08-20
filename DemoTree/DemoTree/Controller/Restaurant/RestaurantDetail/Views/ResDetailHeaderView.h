@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DefaultReplyDishList;
 
 @interface ResDetailHeaderView : UIView
+
+@property (nonatomic, strong) DefaultReplyDishList *detailData;
 
 @end

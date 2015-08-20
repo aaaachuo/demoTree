@@ -32,7 +32,7 @@
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
-        UIView *currentView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH - 20, 176)];
+        UIView *currentView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, SCREEN_WIDTH, 176)];
         currentView.layer.cornerRadius = 5.f;
         currentView.layer.masksToBounds = YES;
         currentView.backgroundColor = [UIColor whiteColor];
@@ -133,7 +133,7 @@
         }];
         
         UIView *cutOffRule2 = [[UIView alloc] init];
-        cutOffRule2.backgroundColor = kUIColorFromRGB(0xe1e1e1);
+        cutOffRule2.backgroundColor = BACKGRAY_COLOR;
         [currentView addSubview:cutOffRule2];
         
         [cutOffRule2 mas_makeConstraints:^(MASConstraintMaker *make) {

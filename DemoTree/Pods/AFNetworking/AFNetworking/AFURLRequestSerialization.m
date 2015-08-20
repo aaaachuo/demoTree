@@ -20,7 +20,6 @@
 // THE SOFTWARE.
 
 #import "AFURLRequestSerialization.h"
-#import "JSONKit.h"
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -504,7 +503,6 @@ forHTTPHeaderField:(NSString *)field
             switch (self.queryStringSerializationStyle) {
                 case AFHTTPRequestQueryStringDefaultStyle:
                     query = AFQueryStringFromParametersWithEncoding(parameters, self.stringEncoding);
-//                    query = [parameters JSONString];
                     break;
             }
         }

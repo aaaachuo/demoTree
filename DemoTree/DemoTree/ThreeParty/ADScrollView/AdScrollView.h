@@ -31,6 +31,8 @@ typedef NS_ENUM(NSUInteger, AdTitleShowStyle)
 @property (retain,nonatomic,readonly) NSArray * adTitleArray;
 @property (assign,nonatomic,readwrite) UIPageControlShowStyle  PageControlShowStyle;
 @property (assign,nonatomic,readonly) AdTitleShowStyle  adTitleStyle;
+/// 名字
+//@property (nonatomic, strong) UILabel *titleLabel;
 
 //- (void)setAdTitleArray:(NSArray *)adTitleArray withShowStyle:(AdTitleShowStyle)adTitleStyle;
 @end

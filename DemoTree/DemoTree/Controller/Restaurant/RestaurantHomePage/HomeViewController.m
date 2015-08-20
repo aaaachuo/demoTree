@@ -10,6 +10,7 @@
 #import "TabButton.h"
 #import "HomePageViewController.h"
 #import "HomeDetailViewController.h"
+#import "DefaultReplyMerchantList.h"
 
 @interface HomeViewController () {
     
@@ -40,6 +41,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _detailVc = [[HomeDetailViewController alloc] init];
     _pageVc = [[HomePageViewController alloc] init];
+    _pageVc.merchant = _merchant;
     [self addChildViewController:_detailVc];
     [self addChildViewController:_pageVc];
     [self.view addSubview:_pageVc.view];

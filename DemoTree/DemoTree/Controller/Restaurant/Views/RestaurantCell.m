@@ -7,6 +7,7 @@
 //
 
 #import "RestaurantCell.h"
+#import "DefaultReplyMerchantList.h"
 
 @interface RestaurantCell ()
 
@@ -30,10 +31,13 @@
     _backView.layer.cornerRadius = 5.f;
     _backView.layer.masksToBounds = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
 }
 
-
-
+- (void)setCellData:(DefaultReplyMerchantList *)cellData {
+    
+    _title.text = cellData.merchantName;
+    _distance.text = cellData.distance;
+    _location.text = [NSString stringWithFormat:@"地区：%@",cellData.areaName];
+}
 
 @end

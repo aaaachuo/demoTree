@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class DefaultReplyDishList;
+
 @interface ResDetailViewController : UIViewController
+
+/// 赋值
+@property (nonatomic, strong) DefaultReplyDishList *dishDetail;
 
 @end

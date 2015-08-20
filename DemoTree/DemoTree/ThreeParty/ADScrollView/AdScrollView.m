@@ -29,8 +29,6 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     NSTimer * _moveTime;
     //用于确定滚动式由人导致的还是计时器到了,系统帮我们滚动的,YES,则为系统滚动,NO则为客户滚动(ps.在客户端中客户滚动一个广告后,这个广告的计时器要归0并重新计时)
     BOOL _isTimeUp;
-    
-    UILabel *_titleLabel;
 }
 
 @property (retain,nonatomic,readonly) UIImageView * leftImageView;
@@ -55,23 +53,18 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
         self.contentSize = CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT);
         self.delegate = self;
         
-        _leftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _leftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, frame.size.height)];
         [self addSubview:_leftImageView];
-        _centerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _centerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, frame.size.height)];
+        _centerImageView.image = [UIImage imageNamed:@"main_scroll"];
         [self addSubview:_centerImageView];
-        _rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, frame.size.height)];
         [self addSubview:_rightImageView];
         
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-        [self addSubview:_titleLabel];
+//        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height - 40, SCREEN_WIDTH, 40)];
+//        _titleLabel.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+//        [self addSubview:_titleLabel];
         
-        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left).with.offset(0);
-            make.right.equalTo(self.mas_right).with.offset(0);
-            make.bottom.equalTo(self.mas_bottom).with.offset(0);
-            make.height.equalTo(@(adjustsSizeToFitWithWidth320(32)));
-        }];
 //        _moveTime = [NSTimer scheduledTimerWithTimeInterval:chageImageTime target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
 //        _isTimeUp = NO;
         

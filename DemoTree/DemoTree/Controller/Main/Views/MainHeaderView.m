@@ -19,24 +19,10 @@
         
         self.backgroundColor = kUIColorFromRGB(0xeeeee9);
         
-        [TreeManager shareDemoTreeManager];
-        
-        NSString *deviceScreen = getDeviceScreen();
-        
-        CGFloat adHeight = 0;
-        CGFloat buttonWidth = 0;
-        CGFloat touchViewHeight = 0;
-        CGFloat cellTitleViewHeight = 0;
-        if ([deviceScreen isEqualToString:@"4.7"]) {
-            
-        }else if ([deviceScreen isEqualToString:@"5.5"]) {
-            
-        }else {
-            adHeight = 160;
-            buttonWidth = 88;
-            touchViewHeight = 54;
-            cellTitleViewHeight = 34;
-        }
+        CGFloat adHeight = adjustsSizeToFitWithWidth320(160);
+        CGFloat buttonWidth = adjustsSizeToFitWithWidth320(88);
+        CGFloat touchViewHeight = adjustsSizeToFitWithWidth320(54);
+        CGFloat cellTitleViewHeight = adjustsSizeToFitWithWidth320(34);
         
         AdScrollView *adscrollView = [[AdScrollView alloc] init];
         adscrollView.backgroundColor = [UIColor redColor];
@@ -112,7 +98,7 @@
         }];
         
         UILabel *orderingTitle = [[UILabel alloc] init];
-        orderingTitle.text = @"及时点餐";
+        orderingTitle.text = @"点餐";
         orderingTitle.font = [UIFont systemFontOfSize:13];
         orderingTitle.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1];
         orderingTitle.textAlignment = NSTextAlignmentCenter;

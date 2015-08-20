@@ -13,8 +13,11 @@
 #import "FourthViewController.h"
 #import "ZZTabBarView.h"
 #import "ZZTabBarItem.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<CLLocationManagerDelegate>
+
+@property (nonatomic,strong) CLLocationManager* locationManager;
 
 @end
 
@@ -32,6 +35,17 @@
     UIViewController *controller = [self setupViewControllers];
     [self.window setRootViewController:controller];
     [self.window makeKeyAndVisible];
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.distanceFilter = 10.0f;
+    
+    if (IS_IOS8) {
+        [_locationManager requestWhenInUseAuthorization];
+    }
+    
+    [self startLocation];
     
     return YES;
 }
@@ -70,6 +84,46 @@
         
         index ++;
     }
+}
+
+-(void)startLocation{
+    
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    if (kCLAuthorizationStatusDenied == status || kCLAuthorizationStatusRestricted == status) {
+        //激活接口ip
+        
+    }else {
+        
+        [_locationManager startUpdatingLocation];
+    }
+}
+
+//定位代理经纬度回调
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [_locationManager stopUpdatingLocation];
+    
+    [TreeManager shareDemoTreeManager].longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
+    [TreeManager shareDemoTreeManager].latitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
+    
+//    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+//    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+//        for (CLPlacemark * placemark in placemarks) {
+//            
+//            NSDictionary *test = [placemark addressDictionary];
+//            
+//            [defaults setObject:[test objectForKey:@"State"] forKey:@"state"];
+//            
+//            [defaults setObject:[test objectForKey:@"City"] forKey:@"city"];
+//            
+//            [defaults setObject:[test objectForKey:@"SubLocality"] forKey:@"subLocality"];
+//            
+//            [defaults synchronize];
+//        }
+//    }];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

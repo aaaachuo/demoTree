@@ -12,11 +12,14 @@
 #import "RestaurantCell.h"
 #import "HomePageViewController.h"
 #import "HomeViewController.h"
+#import "DefaultReplyMerchantList.h"
+#import "ZZRequestAPI.h"
 
 @interface RestaurantController ()<UITableViewDelegate, UITableViewDataSource> {
 
     FilterView *_filterView;
     UITableView *_tableView;
+    NSMutableArray *_tableList;
 }
 
 @end
@@ -29,6 +32,7 @@
     
     if (self) {
         self.title = @"全部餐厅";
+        _tableList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -39,6 +43,7 @@
 
     [self initFilterView];
     [self initCurrentTable];
+    [self requestResList];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,7 +94,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return _tableList.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,6 +106,10 @@
     
     RestaurantCell *cell = cell = [[[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:nil options:nil] lastObject];
     
+    if (_tableList.count) {
+        cell.cellData = _tableList[indexPath.row];
+    }
+    
     return cell;
 }
 
@@ -109,6 +118,25 @@
     HomeViewController *homeVc = [[HomeViewController alloc] init];
     
     [self.navigationController pushViewController:homeVc animated:YES];
+}
+
+- (void)requestResList {
+    
+    NSDictionary *dic = [MainRequestHeader getMerchantListWithType:@"area" area:nil distance:nil page:1];
+    
+    [ZZRequestAPI postBody:dic andUrl:IDS_RES_MERCHANTLIST andSucceed:^(DefaultReply *reply) {
+        
+        for (NSDictionary *dic in reply.merchantList) {
+            DefaultReplyMerchantList *obj = [DefaultReplyMerchantList objectWithKeyValues:dic];
+            [_tableList addObject:obj];
+        }
+        
+        [_tableView reloadData];
+        
+    } andFailed:^(NSError *error) {
+        
+    }];
+    
 }
 
 @end

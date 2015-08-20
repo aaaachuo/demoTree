@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class DefaultReplyMerchantList;
+
 @interface HomePageViewController : UIViewController
+
+/// 餐厅数据
+@property (nonatomic, strong) DefaultReplyMerchantList *merchant;
 
 @end
