@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *telephone;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
+@property (weak, nonatomic) IBOutlet UIView *backView;
+
+
 @end
 
 @implementation MineViewController
@@ -44,11 +47,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)savePwd:(id)sender {
 }
+- (IBAction)autoLogin:(id)sender {
+}
+- (IBAction)searchPwd:(id)sender {
+}
+- (IBAction)enroll:(id)sender {
+}
+
 - (IBAction)Login:(UIButton *)sender {
     
     EnrollViewController *enrollVc = [[EnrollViewController alloc] init];

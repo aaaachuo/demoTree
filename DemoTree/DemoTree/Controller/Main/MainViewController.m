@@ -143,10 +143,13 @@
     
     [ZZRequestAPI postBody:dic andUrl:str andSucceed:^(DefaultReply *reply) {
         
-        for (NSDictionary *dic in reply.dishList) {
-            DefaultReplyDishList *obj = [DefaultReplyDishList objectWithKeyValues:dic];
-            [_tableList addObject:obj];
-        }
+//        for (NSDictionary *dic in reply.dishList) {
+//            DefaultReplyDishList *obj = [DefaultReplyDishList objectWithKeyValues:dic];
+//            [_tableList addObject:obj];
+//        }
+        
+        NSArray *array = [DefaultReplyDishList objectArrayWithKeyValuesArray:reply.dishList];
+        [_tableList addObjectsFromArray:array];
         
         [_tableView reloadData];
         

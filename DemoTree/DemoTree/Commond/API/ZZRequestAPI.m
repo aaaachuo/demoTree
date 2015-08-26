@@ -23,6 +23,12 @@
         
         NSDictionary *result = (NSDictionary *)responseObject;
         Default *def = [Default objectWithKeyValues:result];
+//        [DefaultReply setupObjectClassInArray:^NSDictionary *{
+//            return @{
+//                     @"dishList":@"DefaultReplyDishList",
+//                     @"merchantList":@"DefaultReplyMerchantList"
+//                     };
+//        }];
         
         if (def.code == 0) {
             succeed(def.reply);
